@@ -1,0 +1,12 @@
+body {
+    background: red;
+}
+.container {
+    width: 100%;
+}
+
+.box-full {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+}
