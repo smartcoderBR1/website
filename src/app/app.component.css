@@ -26,7 +26,7 @@ body {
 
 .bg-header {
     background: url(/assets/images/bg-header.jpeg);
-    padding: 90px 0;
+    padding: 60px 0;
     background-size: cover;
 }
 
@@ -53,6 +53,25 @@ h1 {
 
 .txt-bold {
     font-weight: bold;
+}
+
+.call-to-action {
+    border: 1px #fff solid;
+    z-index: 2;
+    position: relative;
+    background: transparent;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 3.6em;
+    font-weight: 300;
+    margin-top: 40px;
+    transition: .2s;
+}
+
+.call-to-action:hover {
+    cursor: pointer;
+    background: #fff;
+    color: rgb(24, 58, 96);
 }
 @media(max-width: 481px) {
     img {
