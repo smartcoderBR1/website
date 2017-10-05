@@ -38,7 +38,7 @@ body {
     height: 100%;
     top: 0;
 }
-h1 {
+h1 , h2{
     position: relative;
     z-index: 1;
     color: #fff;
@@ -50,7 +50,10 @@ h1 {
 	max-width: 615px;
     line-height: 1.4em;
 }
-
+h2 {
+    color: rgb(24, 58, 96);
+    margin-bottom: .8em;
+}
 .txt-bold {
     font-weight: bold;
 }
@@ -72,6 +75,13 @@ h1 {
     cursor: pointer;
     background: #fff;
     color: rgb(24, 58, 96);
+}
+
+p {
+    font-size: 1.6em;
+    font-weight: 300;
+    line-height: 1.6em;
+    margin-bottom: 1.6em;
 }
 @media(max-width: 481px) {
     img {
