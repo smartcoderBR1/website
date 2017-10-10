@@ -121,6 +121,59 @@ p {
     font-weight: 100;
     margin: .6em 0;
 }
+
+
+form {
+    z-index: 3;
+    position: relative;
+}
+
+label {
+    text-align: left;
+    padding: 0 10px;
+    float: left;
+    box-sizing: border-box;
+}
+
+label span {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: .6em;
+}
+
+input[type="text"] {
+    border: none;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.label-nome {    
+    width: 50%;
+    background: green;
+}
+.label-nome input{    
+    width: 100%;
+}
+
+.label-email {
+    background: red;
+    width: 30%;
+}
+
+.label-email input {
+    width: 100%;
+}
+
+.label-telefone {    
+    background: blue;
+    width: 20%;    
+}
+
+.label-telefone input{    
+    width: 100%;    
+}
 @media(max-width: 481px) {
     .logo {
 		width: 70%;
