@@ -44,7 +44,7 @@ h1 , h2{
     position: relative;
     z-index: 1;
     font-size: 3.6em;
-	font-weight: 300;
+	
 	margin: 0 auto;
 	max-width: 615px;
     line-height: 1.4em;
@@ -65,7 +65,7 @@ h2 {
     color: #fff;
     padding: 20px 40px;
     font-size: 3.6em;
-    font-weight: 300;
+    
     margin-top: 40px;
     transition: .2s;
 }
@@ -78,7 +78,7 @@ h2 {
 
 p {
     font-size: 1.6em;
-    font-weight: 300;
+    
     line-height: 1.6em;
     margin-bottom: 1.6em;
 }
@@ -122,58 +122,68 @@ p {
     margin: .6em 0;
 }
 
-
+// form
 form {
     z-index: 3;
     position: relative;
+    display: inline-block;
+    width: 100%;
 }
-
-label {
+.form-group {
     text-align: left;
     padding: 0 10px;
     float: left;
     box-sizing: border-box;
 }
-
 label span {
     display: block;
     color: #fff;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 16px;    
     margin-bottom: .6em;
 }
-
 input[type="text"] {
     border: none;
-    padding: 1em;
+    padding: 1em .6em;
     box-sizing: border-box;
+    font-size: 1.6em;
+    font-weight: 300;
 }
-
-.label-nome {    
+.form-name {    
     width: 50%;
-    background: green;
 }
-.label-nome input{    
-    width: 100%;
-}
-
-.label-email {
-    background: red;
+.form-email {
     width: 30%;
 }
-
-.label-email input {
+.form-tel {
+    width: 20%;    
+}
+.form-btn {
+    width: 100%;
+}
+.form-btn button{
+    font-weight: 100;
+    font-size: 2em;
+    padding: 1em;
+    border: 1px #fff solid;
+    color: #fff;
+    background: none;
+    margin-top: 1.2em;
+    letter-spacing: .3em;  
+}
+.form-btn button:hover{
+    background: #fff;
+    color: #183a60;
+    cursor: pointer;
+}
+.form-name input,
+.form-email input,
+.form-tel input,
+.form-btn button{    
     width: 100%;
 }
 
-.label-telefone {    
-    background: blue;
-    width: 20%;    
-}
+// form
 
-.label-telefone input{    
-    width: 100%;    
-}
 @media(max-width: 481px) {
     .logo {
 		width: 70%;
@@ -198,5 +208,12 @@ input[type="text"] {
     }
     .list-testmonials p{
         margin-bottom: 0;
+    }
+
+    .form-name,
+    .form-email,
+    .form-tel {
+        width: 100%;
+        margin-bottom: 2em;
     }
 }
