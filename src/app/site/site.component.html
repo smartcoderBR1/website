@@ -105,27 +105,73 @@
   <div class="box-full bg-header bg-header-tools">
       <div class="content txt-center">
         <h2 class="title-tools">Não fique de fora, entre em contato</h2>
-        <form action="">
-          <div class="form-group form-name">
+        <form action="" #newContact="ngForm">
+          <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
             <label class="" for="">
               <span>Nome</span>
-              <input type="text" placeholder="Digite seu nome" autocomplete="off">
+              <input 
+                type="text"
+                id="name"
+                name="name"
+                #nameTemplate="ngModel"
+                [ngModel]="name"
+                placeholder="Digite seu nome"
+                required
+                minlength="3"
+                autocomplete="off">
+                <div
+                *ngIf="nameTemplate.hasError('minlength')"
+                class="txt-negativo">O nome não pode ter menos que 3 letras.
+              </div>
             </label>
           </div>
-          <div class="form-group form-email">
+          <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
             <label for="" class="">
               <span>E-mail</span>
-              <input type="text" placeholder="Digite seu e-mail" autocomplete="off">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                #emailTemplate="ngModel"
+                [ngModel]="email"
+                placeholder="Digite seu e-mail"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                autocomplete="off">
+                <div
+                  *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
+                  class="txt-negativo">Digite um e-mail válido.
+                </div>
             </label>
           </div>
-          <div class="form-group form-tel">
+          <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
             <label for="" class="">
               <span>Telefone</span>
-              <input type="text" placeholder="Digite seu telefone" autocomplete="off">
+              <input 
+                type="text"
+                id="tel"
+                name="tel"
+                #telTemplate="ngModel"
+                [ngModel]="tel"
+                placeholder="Digite seu telefone"
+                required
+                autocomplete="off"
+                minlength="13"
+                [textMask]="{mask:mask, guide: false}">               
             </label>
+            <div
+              *ngIf="telTemplate.hasError('minlength')"
+              class="txt-negativo">Digite um telefone válido.
+            </div>
+            <div
+              *ngIf="telTemplate.touched && telTemplate.hasError('required')"
+              class="txt-negativo">Campo obrigatório.
+            </div>
           </div>
           <div class="form-group form-btn">
-            <button>Enviar formulário</button>
+            <button
+              [disabled]="newContact.invalid"
+              (click)="postForm(newContact.value)">Enviar formulário</button>
           </div>
         </form>
       </div>

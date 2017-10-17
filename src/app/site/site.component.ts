@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteComponent implements OnInit {
 
+  public mask = ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+  
+  
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  postForm(form) {
+    console.log(form);
+  }
 }
