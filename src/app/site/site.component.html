@@ -1,4 +1,5 @@
 <div class="container">
+
   <div class="box-full">
     <div class="content txt-center">
       <a href="#" title="smartcoder">
@@ -17,22 +18,33 @@
   <div class="box-full">
     <div class="content txt-center">
       <h2>Porque fazer esse curso?</h2>
-      
+      <p>A programação é um dos pilares da Internet e é fundamental para quem deseja atuar em uma
+        das áreas mais fascinantes e bem remuneradas do mercado digital. Pensando nisso, a smartcoder 
+        criou o ((nome do curso)), um programa que vai ensinar você a programar na prática,
+        sem complicações. Aprenda do zero e, ao final do curso, você vai saber criar um site de
+        verdade e de qualidade!</p>
+
+      <h3>A quem se destina</h3>
       <p>O (((nome do curso))) é voltado para você que não tem nenhum conhecimento em programação e
           não sabe por onde começar. Designers, redatores e outros profissionais do marketing digital
           estão convidados a ampliar seus conhecimentos, aumentando o currículo para novas e
           melhores oportunidades no mercado.</p>
+
+      <h3>O que e como vou aprender?</h3>
+      <p>Queremos que você aprenda sem rodeios e termine o curso sabendo programar o suficiente
+        para criar seu site. Aqui, você terá aulas práticas e diretas em um curso de Xx duração.
+        Preparamos um programa específico e completo para você ganhar conhecimento de forma
+        rápida e eficiente!</p>
 
         <p>O mercado de trabalho muda constantemente, as empresas estão exigindo cada vez mais conhecimento
            de seus funcionários, sabemos que desenvolver um site, ou um sistema web é um tanto complexo, aqui na 
            'smartcoder' podemos te ajudar a entender esse mundo do frontend.</p>
 
           <p>Aqui na 'smartcoder' temos treinamentos que vão desde quem não sabe o que é HTML, até desenvolvermos uma SPA - Single page application</p>
-          <p>Além de aprender diversas ferramentas para construir um website moderno, e utilizando as melhores técnicas e boas práticas, vamos aprende também como controlar as versões do nosso projeto, o onde armazenar os arquivos.</p>
+          <p>Além de aprender diversas ferramentas para construir um website moderno, e utilizando as melhores técnicas e boas práticas, vamos aprender também como controlar as versões do nosso projeto, o onde armazenar os arquivos.</p>
     </div>
   </div>
   
-
   <div class="box-full bg-header bg-header-tools">
     <div class="content txt-center">
       <h2 class="title-tools">Ferramentas que aprenderá no curso</h2>
@@ -53,6 +65,145 @@
 
   <div class="box-full">
     <div class="content txt-center">
+      <h2>Conteúdo programático</h2>
+      <p>Duração: 80 horas</p>
+      <ul>
+        <li><p>Introdução ao html</p>
+          <ul>
+            <li><p>Introdução HTML</p></li>
+            <li><p>História do HTML</p></li>
+            <li><p>Conhecendo os navegadores</p></li>
+            <li><p>Motores de renderização</p></li>
+          </ul>
+        </li>
+        <li>HTML5
+          <ul>
+            <li>Tags e atributos</li>
+            <li>Estruturas e padrões</li>
+            <li>Titulos</li>
+            <li>Paragrafos</li>
+            <li>Listas</li>
+            <li>Tabelas</li>
+            <li>Links</li>
+            <li>Imagens</li>
+            <li>Áudio</li>
+            <li>Vídeo</li>
+            <li>Microformatos</li>
+            <li>Formulários</li>
+            <li>SEO</li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <ul>
+          <li>Introdução a CSS
+            <ul>
+              <li>Introdução CSS</li>
+              <li>História do CSS</li>
+            </ul>
+          </li>
+          <li>CSS3
+            <ul>
+              <li>Tags e atributos</li>
+              <li>Estruturas e padrões</li>
+              <li>Titulos</li>
+              <li>Paragrafos</li>
+              <li>Listas</li>
+              <li>Tabelas</li>
+              <li>Links</li>
+              <li>Imagens</li>
+              <li>Áudio</li>
+              <li>Vídeo</li>
+              <li>Microformatos</li>
+              <li>Formulários</li>
+              <li>SEO</li>
+            </ul>
+          </li>
+          <li>CSS</li>
+        </ul>
+
+    </div>
+  </div>
+
+  <div class="box-full bg-header bg-header-tools">
+
+    <div class="content txt-center">
+      <h2 class="title-tools">Não fique de fora, entre em contato</h2>
+      <form action="" #newContact="ngForm">
+        <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
+          <label class="" for="">
+            <span>Nome</span>
+            <input 
+              type="text"
+              id="name"
+              name="name"
+              #nameTemplate="ngModel"
+              [ngModel]="name"
+              placeholder="Digite seu nome"
+              required
+              minlength="3"
+              autocomplete="off">
+              <div
+              *ngIf="nameTemplate.hasError('minlength')"
+              class="txt-negativo">O nome não pode ter menos que 3 letras.
+            </div>
+          </label>
+        </div>
+        <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
+          <label for="" class="">
+            <span>E-mail</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              #emailTemplate="ngModel"
+              [ngModel]="email"
+              placeholder="Digite seu e-mail"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              autocomplete="off">
+              <div
+                *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
+                class="txt-negativo">Digite um e-mail válido.
+              </div>
+          </label>
+        </div>
+        <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
+          <label for="" class="">
+            <span>Telefone</span>
+            <input 
+              type="text"
+              id="tel"
+              name="tel"
+              #telTemplate="ngModel"
+              [ngModel]="tel"
+              placeholder="Digite seu telefone"
+              required
+              autocomplete="off"
+              minlength="13"
+              [textMask]="{mask:mask, guide: false}">               
+          </label>
+          <div
+            *ngIf="telTemplate.hasError('minlength')"
+            class="txt-negativo">Digite um telefone válido.
+          </div>
+          <div
+            *ngIf="telTemplate.touched && telTemplate.hasError('required')"
+            class="txt-negativo">Campo obrigatório.
+          </div>
+        </div>
+        <div class="form-group form-btn">
+          <button
+            [disabled]="newContact.invalid"
+            (click)="postForm(newContact.value)">Enviar formulário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="box-full">
+    <div class="content txt-center">
       <h2>Depoimentos</h2>
 
       <ul class="list-tools list-testmonials">
@@ -62,9 +213,9 @@
             <h3 class="title-testmonial">J. Smith</h3>
             <p>Vestibultum fringilla,
                 diam nec eleifend ultricies, 
-               erat ipsum mollis lorem, 
-               non aliquet risus erat non ex. 
-               at rhoncus eros.</p>
+                erat ipsum mollis lorem, 
+                non aliquet risus erat non ex. 
+                at rhoncus eros.</p>
           </div>
         </li>
         <li>
@@ -106,79 +257,6 @@
     </div>
   </div>
 
-  <div class="box-full bg-header bg-header-tools">
-      <div class="content txt-center">
-        <h2 class="title-tools">Não fique de fora, entre em contato</h2>
-        <form action="" #newContact="ngForm">
-          <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
-            <label class="" for="">
-              <span>Nome</span>
-              <input 
-                type="text"
-                id="name"
-                name="name"
-                #nameTemplate="ngModel"
-                [ngModel]="name"
-                placeholder="Digite seu nome"
-                required
-                minlength="3"
-                autocomplete="off">
-                <div
-                *ngIf="nameTemplate.hasError('minlength')"
-                class="txt-negativo">O nome não pode ter menos que 3 letras.
-              </div>
-            </label>
-          </div>
-          <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
-            <label for="" class="">
-              <span>E-mail</span>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                #emailTemplate="ngModel"
-                [ngModel]="email"
-                placeholder="Digite seu e-mail"
-                required
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                autocomplete="off">
-                <div
-                  *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
-                  class="txt-negativo">Digite um e-mail válido.
-                </div>
-            </label>
-          </div>
-          <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
-            <label for="" class="">
-              <span>Telefone</span>
-              <input 
-                type="text"
-                id="tel"
-                name="tel"
-                #telTemplate="ngModel"
-                [ngModel]="tel"
-                placeholder="Digite seu telefone"
-                required
-                autocomplete="off"
-                minlength="13"
-                [textMask]="{mask:mask, guide: false}">               
-            </label>
-            <div
-              *ngIf="telTemplate.hasError('minlength')"
-              class="txt-negativo">Digite um telefone válido.
-            </div>
-            <div
-              *ngIf="telTemplate.touched && telTemplate.hasError('required')"
-              class="txt-negativo">Campo obrigatório.
-            </div>
-          </div>
-          <div class="form-group form-btn">
-            <button
-              [disabled]="newContact.invalid"
-              (click)="postForm(newContact.value)">Enviar formulário</button>
-          </div>
-        </form>
-      </div>
-    </div>
 
 </div>
+
