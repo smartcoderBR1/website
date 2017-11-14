@@ -183,6 +183,15 @@ input[type="email"] {
     width: 100%;
 }
 
+.list {
+    width: 33.3%;
+    float: left;
+}
+
+.list li p {
+    margin-bottom: 0;
+}
+
 // form
 
 .has-error label input {
