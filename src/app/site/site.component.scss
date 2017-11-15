@@ -1,11 +1,16 @@
 .container {
     width: 100%;
+    position: relative;
+    display: inherit;
 }
+
+
 
 .box-full {
     width: 100%;
     position: relative;
     display: table; 
+    //display: none;
 }
 
 .content {
@@ -53,6 +58,12 @@ h2 {
     color: rgb(24, 58, 96);
     margin-bottom: .8em;
 }
+
+h3 {
+    font-size: 2em;
+    margin-bottom: .8em;
+}
+
 .txt-bold {
     font-weight: bold;
 }
@@ -78,7 +89,7 @@ h2 {
 
 p {
     font-size: 1.6em;
-    
+    padding: 0 6em;
     line-height: 1.6em;
     margin-bottom: 1.6em;
 }
@@ -185,11 +196,46 @@ input[type="email"] {
 
 .list {
     width: 33.3%;
+    /* background: rebeccapurple; */
     float: left;
+    /* border: 1px red solid; */
+    padding: 0 4em;
+    box-sizing: border-box;
+}
+
+.list li {
+    text-align: left;
 }
 
 .list li p {
     margin-bottom: 0;
+    padding: 0 1em;
+
+}
+
+#A1-main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    z-index: 1;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(24,58,96, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+video {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
 }
 
 // form
