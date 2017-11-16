@@ -1,7 +1,4 @@
 <div class="container">
-    
-    
-    
 
   <div class="box-full" style="position: absolute; width: 100%; background: #fff; z-index: 2;">
     <div class="content txt-center">
@@ -54,6 +51,95 @@
           <p>Além de aprender diversas ferramentas para construir um website moderno, e utilizando as melhores técnicas e boas práticas, vamos aprender também como controlar as versões do nosso projeto, o onde armazenar os arquivos.</p>
     </div>
   </section>
+
+  <!-- form -->
+  <div class="box-full bg-header bg-header-tools">
+      
+    <div class="content txt-center">
+      <h2 class="title-tools">Não fique de fora, entre em contato</h2>
+      <form action="" #newContact="ngForm">
+        <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
+          <label class="" for="">
+            <span>Nome</span>
+            <input 
+              type="text"
+              id="name"
+              name="name"
+              #nameTemplate="ngModel"
+              [ngModel]="name"
+              placeholder="Digite seu nome"
+              required
+              minlength="3"
+              autocomplete="off">
+              <div
+              *ngIf="nameTemplate.hasError('minlength')"
+              class="txt-negativo">O nome não pode ter menos que 3 letras.
+            </div>
+          </label>
+        </div>
+        <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
+          <label for="" class="">
+            <span>E-mail</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              #emailTemplate="ngModel"
+              [ngModel]="email"
+              placeholder="Digite seu e-mail"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+              autocomplete="off">
+              <div
+                *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
+                class="txt-negativo">Digite um e-mail válido.
+              </div>
+          </label>
+        </div>
+        <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
+          <label for="" class="">
+            <span>Telefone</span>
+            <input 
+              type="text"
+              id="tel"
+              name="tel"
+              #telTemplate="ngModel"
+              [ngModel]="tel"
+              placeholder="Digite seu telefone"
+              required
+              autocomplete="off"
+              minlength="13"
+              [textMask]="{mask:mask, guide: false}">               
+          </label>
+          <div
+            *ngIf="telTemplate.hasError('minlength')"
+            class="txt-negativo">Digite um telefone válido.
+          </div>
+          <div
+            *ngIf="telTemplate.touched && telTemplate.hasError('required')"
+            class="txt-negativo">Campo obrigatório.
+          </div>
+        </div>
+        <div class="form-group form-btn">
+          <button
+            [disabled]="newContact.invalid"
+            (click)="postForm(newContact.value)">Enviar formulário</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- mapa -->
+  <section class="">
+      
+    <div class="content txt-center" style="padding: 3em 0">
+      <h2>Localização</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1087225019446!2d-46.656998185022196!3d-23.564538384681327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c898859441%3A0xf1f2bc61d1b530da!2sAlameda+Santos%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1510794436858" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+
+  </section>
+  
   
   <div class="box-full bg-header bg-header-tools">
     <div class="content txt-center">
@@ -284,34 +370,39 @@
     </div>
   </div>
 
-  <div class="box-full bg-header bg-header-tools">
+  <footer class="box-full bg-header bg-header-tools">
       
-          <div class="content txt-center">
-            <div>
-                <h3>Contatos</h3>
-                <ul>
-                    <li><p>contato@smartcoder.io</p></li>
-                    <li><a href="tel:954829300">(11) 954829300</a></li>
-                    <li><p>São Paulo - Brasil</p></li>
-                  </ul>
-            </div>
+    <div class="content box-footer">
 
-            <div>
-                <h3>Redes sociais</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Github</a></li>                    
-                  </ul>
-            </div>
-            
-            <div>
-                <h3>Sobre</h3>
-                <p>Sobre a smartcoder</p>
-            </div>
-          
-          </div>
-        </div>
+      <div class="col-footer">
+          <h3>Contatos</h3>
+          <ul>
+            <li><p><a href="mailto:contato@smartcoder.io">contato@smartcoder.io</a></p></li>
+            <li><p><a href="tel:954829300">(11) 954829300</a></p></li>
+            <li><p>São Paulo - Brasil</p></li>
+          </ul>
+      </div>
 
+      <div class="col-footer">
+          <h3>Redes sociais</h3>
+          <ul>
+              <li><p><a href="https://www.facebook.com/smartcoderBR/" target="_blank">Facebook</a></p></li>
+              <li><p><a href="https://github.com/smartcoderBR" target="_blank">Github</a></p></li>
+            </ul>
+      </div>
+      
+      <div class="col-footer">
+          <h3>Sobre</h3>
+          <p>Sobre a smartcoder</p>
+      </div>
+
+      <div class="col-footer">
+          <h3>Endereço</h3>
+          <p>Alameda Santos, xxxx - Jardim Paulista</p>
+      </div>
+
+    </div>
+
+  </footer>
 
 </div>
-

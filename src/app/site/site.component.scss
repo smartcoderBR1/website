@@ -244,6 +244,28 @@ video {
     margin-bottom: 1.2em;
 }
 
+.box-footer {
+    box-sizing: border-box;
+    padding: 2em 0em 1em;
+    display: inline-block;
+    width: 100%;
+    .col-footer {
+        width: 25%;
+        float: left;
+        color: #fff;
+        padding: 0em 7em;
+        box-sizing: border-box;
+        p {
+            padding: 0;
+            margin-bottom: .4em;
+            color: currentColor;
+            a {
+                text-decoration: none;
+                color: currentColor;
+            }
+        }
+    }
+}
 // form
 
 .has-error label input {
