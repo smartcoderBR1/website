@@ -50,3 +50,11 @@ body {
 html, body {
 	height: 100%;
 }
+
+.txt-negativo {
+	color: red;
+    font-size: 1.6em;
+    margin-top: 0.6em;
+    background: #fff;
+    padding: .8em .6em;
+}

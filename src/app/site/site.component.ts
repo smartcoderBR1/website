@@ -10,14 +10,16 @@ export class SiteComponent implements OnInit {
   name: any;
   email: any;
   tel: any;
+  loading: boolean;
   public mask = ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
   constructor(
-    private siteService: SiteService,
-    
-  ) { }
+    private siteService: SiteService    
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loading = true;
+  }
 
   anchorForm() {
     var url = location.href;               
@@ -28,14 +30,21 @@ export class SiteComponent implements OnInit {
   postForm(form) {
     console.log(form);
 
+    this.loading = false;
+    
+
       this.siteService.sendContact(form)
       .subscribe(
         success => {
           console.log('deu certo')
-  
+          this.loading  = true;
+          this.name     = null;
+          this.email    = null;
+          this.tel      = null;
         },
         error => {
           console.log('algo deu errado')
+          this.loading = true;
         }
       );
     }

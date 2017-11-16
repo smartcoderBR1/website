@@ -203,6 +203,11 @@ input[type="email"] {
     padding: 0 4em;
     box-sizing: border-box;
 }
+.list li:first-child {
+    color: rgba(24,58,96, 0.8);
+
+    font-weight: bold;
+}
 
 .list li {
     text-align: left;
@@ -211,7 +216,6 @@ input[type="email"] {
 .list li p {
     margin-bottom: 0;
     padding: 0 1em;
-
 }
 
 #A1-main {
@@ -272,6 +276,18 @@ video {
     border: 2px red solid !important;
     color: red;
 }
+
+.loading {
+    background: #000 url(/assets/images/loading.gif) no-repeat center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    opacity: .8;
+    top: 0;
+    z-index: 34;
+}
+
 @media(max-width: 481px) {
     .logo {
 		width: 70%;
@@ -282,6 +298,22 @@ video {
         margin-bottom: 0;
     }
 
+    p {
+        padding: 0 .8em;
+    }
+    h1, .call-to-action {
+        font-size: 2.6em;
+    }
+
+    h2 {
+        font-size: 2.3em;
+    }
+
+    .content {
+        padding: 3em 1em;
+    }
+
+    
 }
 
 
@@ -303,5 +335,12 @@ video {
     .form-tel {
         width: 100%;
         margin-bottom: 2em;
+    }
+
+    .list {
+        width: 100%;
+        padding: 0 2em 1em 2em;
+        border-bottom: 1px rgba(24, 58, 96, 1) solid;
+        margin-bottom: 1em;        
     }
 }

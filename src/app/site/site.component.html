@@ -54,9 +54,11 @@
 
   <!-- form -->
   <div id="contactForm" class="box-full bg-header bg-header-tools">
+    <div class="loading" [hidden]="loading"></div>
       
     <div class="content txt-center">
-      <h2 class="title-tools">Não fique de fora, entre em contato</h2>
+      <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
+      
       <form action="" #newContact="ngForm">
         <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
           <label class="" for="">
@@ -168,6 +170,7 @@
 
       <h3 class="topics">Veja abaixo os tópicos que abordaremos durante o treinamento:</h3>
       <ul class="list">
+        <li><p>HTML</p></li>
         <li><p>Introdução HTML</p></li>
         <li><p>O que é HTML5</p></li>
         <li><p>Porque aprender HTML5</p></li>
@@ -191,7 +194,8 @@
       </ul>
 
       <ul class="list">
-        <li><p>Introdução CSS</p></li>
+        <li><p>CSS3</p></li>
+        <li><p>Introdução CSS/CSS3</p></li>
         <li><p>História do CSS</p></li>
         <li><p>Porque aprender CSS</p></li>
         <li><p>Versões CSS</p></li>
@@ -214,6 +218,7 @@
       </ul>
 
       <ul class="list">
+        <li><p>Javascript</p></li>
         <li><p>Introdução javascript</p></li>
         <li><p>História do javascript</p></li>
         <li><p>Versões javascript</p></li>
@@ -239,10 +244,10 @@
     </div>
   </div>
 
-  <div class="box-full bg-header bg-header-tools">
+  <!-- <div class="box-full bg-header bg-header-tools">
 
     <div class="content txt-center">
-      <h2 class="title-tools">Não fique de fora, entre em contato</h2>
+      <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
       <form action="" #newContact="ngForm">
         <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
           <label class="" for="">
@@ -313,7 +318,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> -->
 
   <div class="box-full">
     <div class="content txt-center">
