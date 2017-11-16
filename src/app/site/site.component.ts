@@ -12,7 +12,16 @@ export class SiteComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+   
+  }
+
+  anchorForm() {
+    var url = location.href;               
+    location.href = "#"+"contactForm";
+    history.replaceState(null,null,url);
+  }
 
   postForm(form) {
     console.log(form);
