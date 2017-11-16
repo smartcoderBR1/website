@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SiteComponent } from './site/site.component';
 import { TextMaskModule } from 'angular2-text-mask';
+import { SiteService } from './site/site.service';
+import { HttpModule } from '@angular/http';
+
 
 
 @NgModule({
@@ -14,9 +17,10 @@ import { TextMaskModule } from 'angular2-text-mask';
   imports: [
     BrowserModule,
     FormsModule,
-    TextMaskModule
+    TextMaskModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [SiteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
