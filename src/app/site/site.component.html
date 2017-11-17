@@ -54,6 +54,9 @@
 
   <!-- form -->
   <div id="contactForm" class="box-full bg-header bg-header-tools">
+    <div class="success" [hidden]="success">
+      <h2>Mensagem enviada com suceso!</h2>
+    </div>
     <div class="loading" [hidden]="loading"></div>
       
     <div class="content txt-center">
@@ -125,7 +128,7 @@
         <div class="form-group form-btn">
           <button
             [disabled]="newContact.invalid"
-            (click)="postForm(newContact.value)">Enviar formulário</button>
+            (click)="postForm(newContact.value); newContact.resetForm()">Enviar formulário</button>
         </div>
       </form>
     </div>
@@ -218,7 +221,7 @@
       </ul>
 
       <ul class="list">
-        <li><p>Javascript</p></li>
+        <li><p>JAVASCRIPT</p></li>
         <li><p>Introdução javascript</p></li>
         <li><p>História do javascript</p></li>
         <li><p>Versões javascript</p></li>

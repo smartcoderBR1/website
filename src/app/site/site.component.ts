@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SiteService } from 'app/site/site.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-site',
@@ -11,6 +12,7 @@ export class SiteComponent implements OnInit {
   email: any;
   tel: any;
   loading: boolean;
+  success: boolean;
   public mask = ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
 
   constructor(
@@ -19,6 +21,7 @@ export class SiteComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
+    this.success = true;
   }
 
   anchorForm() {
@@ -27,27 +30,17 @@ export class SiteComponent implements OnInit {
     history.replaceState(null,null,url);
   }
 
-  postForm(form) {
-    console.log(form);
-
+  postForm(form) {    
     this.loading = false;
-    
-
       this.siteService.sendContact(form)
       .subscribe(
         success => {
-          console.log('deu certo')
+          this.success = false;
           this.loading  = true;
-          this.name     = null;
-          this.email    = null;
-          this.tel      = null;
         },
         error => {
-          console.log('algo deu errado')
           this.loading = true;
         }
       );
-    }
-
-  
+    }  
 }

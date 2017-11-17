@@ -288,6 +288,15 @@ video {
     z-index: 34;
 }
 
+.success {
+    background: #21ff60;
+    text-align: center;
+    padding: 2em 0;
+    h2 {
+        margin-bottom: 0;
+    }
+}
+
 @media(max-width: 481px) {
     .logo {
 		width: 70%;
