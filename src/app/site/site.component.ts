@@ -11,6 +11,9 @@ export class SiteComponent implements OnInit {
   name: any;
   email: any;
   tel: any;
+  name2: any;
+  email2: any;
+  tel2: any;
   loading: boolean;
   success: boolean;
   public mask = ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
@@ -30,17 +33,25 @@ export class SiteComponent implements OnInit {
     history.replaceState(null,null,url);
   }
 
-  postForm(form) {    
+  postForm(form) {
+    
     this.loading = false;
-      this.siteService.sendContact(form)
-      .subscribe(
-        success => {
-          this.success = false;
-          this.loading  = true;
-        },
-        error => {
-          this.loading = true;
-        }
-      );
-    }  
+
+    let contact = {
+      "name": form.name ? form.name : form.name2,
+      "email": form.email ? form.email : form.email2,
+      "tel": form.tel ? form.tel : form.tel2
+    };
+    
+    this.siteService.sendContact(contact)
+    .subscribe(
+      success => {
+        this.success = false;
+        this.loading  = true;
+      },
+      error => {
+        this.loading = true;
+      }
+    );
+  }  
 }

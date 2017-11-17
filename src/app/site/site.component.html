@@ -145,7 +145,6 @@
 
   </section>
   
-  
   <div class="box-full bg-header bg-header-tools">
     <div class="content txt-center">
       <h2 class="title-tools">Ferramentas que aprenderá no curso</h2>
@@ -246,82 +245,89 @@
 
     </div>
   </div>
-
-  <!-- <div class="box-full bg-header bg-header-tools">
-
-    <div class="content txt-center">
-      <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
-      <form action="" #newContact="ngForm">
-        <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
-          <label class="" for="">
-            <span>Nome</span>
-            <input 
-              type="text"
-              id="name"
-              name="name"
-              #nameTemplate="ngModel"
-              [ngModel]="name"
-              placeholder="Digite seu nome"
-              required
-              minlength="3"
-              autocomplete="off">
-              <div
-              *ngIf="nameTemplate.hasError('minlength')"
-              class="txt-negativo">O nome não pode ter menos que 3 letras.
-            </div>
-          </label>
-        </div>
-        <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
-          <label for="" class="">
-            <span>E-mail</span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              #emailTemplate="ngModel"
-              [ngModel]="email"
-              placeholder="Digite seu e-mail"
-              required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-              autocomplete="off">
-              <div
-                *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
-                class="txt-negativo">Digite um e-mail válido.
+  
+  <!-- form -->
+  <div id="contactForm" class="box-full bg-header bg-header-tools">
+      <div class="success" [hidden]="success">
+        <h2>Mensagem enviada com suceso!</h2>
+      </div>
+      <div class="loading" [hidden]="loading"></div>
+        
+      <div class="content txt-center">
+        <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
+        
+        <form action="" #newContact2="ngForm">
+          <div class="form-group form-name" [class.has-error]="!nameTemplate2.valid && nameTemplate2.touched"> 
+            <label class="" for="">
+              <span>Nome</span>
+              <input 
+                type="text"
+                id="name2"
+                name="name2"
+                #nameTemplate2="ngModel"
+                [ngModel]="name2"
+                placeholder="Digite seu nome"
+                required
+                minlength="3"
+                autocomplete="off">
+                <div
+                *ngIf="nameTemplate2.hasError('minlength')"
+                class="txt-negativo">O nome não pode ter menos que 3 letras.
               </div>
-          </label>
-        </div>
-        <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
-          <label for="" class="">
-            <span>Telefone</span>
-            <input 
-              type="text"
-              id="tel"
-              name="tel"
-              #telTemplate="ngModel"
-              [ngModel]="tel"
-              placeholder="Digite seu telefone"
-              required
-              autocomplete="off"
-              minlength="13"
-              [textMask]="{mask:mask, guide: false}">               
-          </label>
-          <div
-            *ngIf="telTemplate.hasError('minlength')"
-            class="txt-negativo">Digite um telefone válido.
+            </label>
           </div>
-          <div
-            *ngIf="telTemplate.touched && telTemplate.hasError('required')"
-            class="txt-negativo">Campo obrigatório.
+          <div class="form-group form-email" [class.has-error]="!emailTemplate2.valid && emailTemplate2.touched">
+            <label for="" class="">
+              <span>E-mail</span>
+              <input
+                type="email"
+                id="email2"
+                name="email2"
+                #emailTemplate2="ngModel"
+                [ngModel]="email2"
+                placeholder="Digite seu e-mail"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                autocomplete="off">
+                <div
+                  *ngIf="emailTemplate2.touched &&  emailTemplate2.hasError('pattern')"
+                  class="txt-negativo">Digite um e-mail válido.
+                </div>
+            </label>
           </div>
-        </div>
-        <div class="form-group form-btn">
-          <button
-            [disabled]="newContact.invalid"
-            (click)="postForm(newContact.value)">Enviar formulário</button>
-        </div>
-      </form>
+          <div class="form-group form-tel" [class.has-error]="!telTemplate2.valid && telTemplate2.touched">
+            <label for="" class="">
+              <span>Telefone</span>
+              <input 
+                type="text"
+                id="tel2"
+                name="tel2"
+                #telTemplate2="ngModel"
+                [ngModel]="tel2"
+                placeholder="Digite seu telefone"
+                required
+                autocomplete="off"
+                minlength="13"
+                [textMask]="{mask:mask, guide: false}">               
+            </label>
+            <div
+              *ngIf="telTemplate2.hasError('minlength')"
+              class="txt-negativo">Digite um telefone válido.
+            </div>
+            <div
+              *ngIf="telTemplate2.touched && telTemplate2.hasError('required')"
+              class="txt-negativo">Campo obrigatório.
+            </div>
+          </div>
+          <div class="form-group form-btn">
+            <button
+              [disabled]="newContact2.invalid"
+              (click)="postForm(newContact2.value); newContact2.resetForm()">Enviar formulário</button>
+          </div>
+        </form>
+      </div>
+  
     </div>
-  </div> -->
 
   <div class="box-full">
     <div class="content txt-center">
