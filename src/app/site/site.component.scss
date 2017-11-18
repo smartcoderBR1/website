@@ -1,8 +1,51 @@
 .container {
     width: 100%;
-    position: relative;
     display: inherit;
 }
+
+// flexx
+
+.flex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.content-flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.content-flex{
+    div {
+        z-index: 3;
+    }
+}
+
+#A1-main {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    z-index: 1;
+    
+}
+
+
+#contactForm {
+    margin: 2em 0;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -30,29 +73,16 @@
     background-size: cover;
 }
 
-.bg-header-tools {
-    // background: url(/assets/images/bg-header.jpeg);
-    // background-size: cover;
-}
-.bg-header:before {
-    content: '';
-    background: rgba(24,58,96, 1);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0;
-}
 h1 , h2{
     position: relative;
     z-index: 1;
     color: #163b60;
     position: relative;
     z-index: 1;
-    font-size: 3.6em;
-	
-	margin: 0 auto;
-	max-width: 615px;
+    font-size: 2em;
+	padding: 0 .6em;
+	margin: 0 auto .6em auto;
+	max-width: 605px;
     line-height: 1.4em;
 }
 h2 {
@@ -90,57 +120,24 @@ h3 {
 
 p {
     font-size: 1.6em;
+    color: #163b60;
     padding: 0 6em;
     line-height: 1.6em;
-    margin-bottom: 1.6em;
+    max-width: 600px;
 }
 
-.title-tools {
-    color: #fff;
-}
-.list-tools {
-    position: relative;
-    z-index: 3;
-    display: inline-block;
-    width: 100%;
-}
-.list-tools li {
-    float: left;
-    width: 25%;
-    box-sizing: border-box;
-    padding: 1em;
-}
 
-.list-tools li:hover > div{
-    background: rgba(255,255,255, 1);    
-}
 
-.list-tools li div {
-    background: rgba(255,255,255, 0.9);
-    padding: 7em 0;
-    transition: .2s;
-}
-.list-testmonials li div{
-    padding: 0 !important;
-}
-.list-testmonials p{
-    padding: 0 1.6em !important;
-    margin-bottom: 0;
-}
-
-.title-testmonial {
-    font-size: 1.6em;
-    font-weight: 100;
-    margin: .6em 0;
-}
-
-// form
 form {
-    z-index: 3;
-    position: relative;
-    display: inline-block;
-    width: 100%;
+    background: rgba(24,58,96, .8);    
+    
+    display: flex;
+    /* z-index: 3; */
+    /* position: relative; */
+    padding: 2em;
+    flex-wrap: wrap;
 }
+
 .form-group {
     text-align: left;
     padding: 0 10px;
@@ -195,42 +192,12 @@ input[type="email"] {
     width: 100%;
 }
 
-.list {
-    width: 33.3%;
-    /* background: rebeccapurple; */
-    float: left;
-    /* border: 1px red solid; */
-    padding: 0 4em;
-    box-sizing: border-box;
-}
-.list li:first-child {
-    color: rgba(24,58,96, 0.8);
 
-    font-weight: bold;
-}
-
-.list li {
-    text-align: left;
-}
-
-.list li p {
-    margin-bottom: 0;
-    padding: 0 1em;
-}
-
-#A1-main {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    z-index: 1;
-    margin-bottom: 2em;
-}
 
 .overlay {
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.77);
+    background: rgba(255, 255, 255, 0.75);
     position: absolute;
     top: 0;
     left: 0;
@@ -248,29 +215,7 @@ video {
     margin-bottom: 1.2em;
 }
 
-.box-footer {
-    box-sizing: border-box;
-    padding: 2em 0em 1em;
-    display: inline-block;
-    width: 100%;
-    .col-footer {
-        width: 25%;
-        float: left;
-        color: #fff;
-        padding: 0em 7em;
-        box-sizing: border-box;
-        p {
-            padding: 0;
-            margin-bottom: .4em;
-            color: currentColor;
-            a {
-                text-decoration: none;
-                color: currentColor;
-            }
-        }
-    }
-}
-// form
+
 
 .has-error label input {
     border: 2px red solid !important;
@@ -291,6 +236,9 @@ video {
 .success {
     background: #21ff60;
     text-align: center;
+    display: flow-root;
+    position: relative;
+    z-index: 3;
     padding: 2em 0;
     h2 {
         margin-bottom: 0;
@@ -302,11 +250,7 @@ video {
 		width: 70%;
 		min-width: 230px;
     }
-
-    .list-testmonials p{
-        margin-bottom: 0;
-    }
-
+    
     p {
         padding: 0 .8em;
     }
@@ -327,17 +271,24 @@ video {
 
 
 @media(max-width: 980px) {
+
+    .footer {
+        margin-bottom: 2em;
+    }
     
-    .list-tools li {        
-        width: 100%;        
+    #A1-main[_ngcontent-c1] {
+        position: fixed;
+    
     }
 
-    .list-testmonials li{
-        border-bottom: 1px rgba(24, 58, 96, 1) solid;
+    .content-flex {
+        display: grid;
+        padding: 5em 0;
     }
-    .list-testmonials p{
-        margin-bottom: 0;
-    }
+
+    // .flex{
+    //     padding: 4em 0px 0 0;
+    // }
 
     .form-name,
     .form-email,
@@ -346,10 +297,5 @@ video {
         margin-bottom: 2em;
     }
 
-    .list {
-        width: 100%;
-        padding: 0 2em 1em 2em;
-        border-bottom: 1px rgba(24, 58, 96, 1) solid;
-        margin-bottom: 1em;        
-    }
+  
 }

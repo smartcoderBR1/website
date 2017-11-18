@@ -1,422 +1,124 @@
+
 <div class="container">
 
-  <div class="box-full" style="position: absolute; width: 100%; z-index: 2;">
-    <div class="content txt-center">
-      <a href="#" title="smartcoder">
-          <img class="logo" src="assets/images/logo-fonte.png" alt="smartcoder tecnologia" title="smartcoder tecnologia">
-      </a>
-    </div>
-  </div>
 
   <div id="A1-main">
-      <div class="txt-center" style="position: relative;
-      top: 40%;">
-          <h1>Aprenda <strong class="txt-bold">DE FATO</strong> a criar um site prático, de qualidade e responsivo!</h1>
-          <button (click)="anchorForm()" class="call-to-action">Tenho interesse!</button>
-      </div>
     <div class="overlay"></div>                  
     <video src="../../assets/video/video-header.mp4" autoplay="" loop=""></video>
   </div>
 
-  <!-- <div class="box-full bg-header bg-header-call-to-action">
+  <div class="flex txt-center">
+    <div class="content-flex">
+      <div style="margin-bottom: 4em">
+          <a href="#" title="smartcoder">
+              <img class="logo" src="assets/images/logo-fonte.png" alt="smartcoder tecnologia" title="smartcoder tecnologia">
+          </a>
+      </div>
+      <div>
+          <h1>Aprenda <strong class="txt-bold">DE FATO</strong> a criar um site prático, de qualidade e responsivo nesse curso com um conteúdo <strong class="txt-bold">INCRÍVEL!</strong> </h1>
+          <p>Não fique de fora, próxima turma 12/2017 - Aulas presenciais. Quantidade de alunos limitada. Mande-nos uma mensagem, garante sua vaga e um super desconto.</p>
+          <p>Parcele em até 10x sem juros, aceitamos todos os cartões de crédito e débito.</p>
+      </div>
+      <div>
+          <div id="contactForm" class="">
+              
+              <div class="loading" [hidden]="loading"></div>
+                
+              <div class=" txt-center">
+                  <div [hidden]="success">
+                    <div class="success">
+                      <h2>Mensagem enviada com suceso!</h2>
+                    </div>
+                  </div>
+                <!-- <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2> -->
+                
+                <form action="" #newContact="ngForm">
+                  <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
+                    <label class="" for="">
+                      <span>Nome</span>
+                      <input 
+                        type="text"
+                        id="name"
+                        name="name"
+                        #nameTemplate="ngModel"
+                        [ngModel]="name"
+                        placeholder="Digite seu nome"
+                        required
+                        minlength="3"
+                        autocomplete="off">
+                        <div
+                        *ngIf="nameTemplate.hasError('minlength')"
+                        class="txt-negativo">O nome não pode ter menos que 3 letras.
+                      </div>
+                    </label>
+                  </div>
+                  
+                  <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
+                    <label for="" class="">
+                      <span>E-mail</span>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        #emailTemplate="ngModel"
+                        [ngModel]="email"
+                        placeholder="Digite seu e-mail"
+                        required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                        autocomplete="off">
+                        <div
+                          *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
+                          class="txt-negativo">Digite um e-mail válido.
+                        </div>
+                    </label>
+                  </div>
+                  
+                  <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
+                    <label for="" class="">
+                      <span>Telefone</span>
+                      <input 
+                        type="text"
+                        id="tel"
+                        name="tel"
+                        #telTemplate="ngModel"
+                        [ngModel]="tel"
+                        placeholder="Digite seu telefone"
+                        required
+                        autocomplete="off"
+                        minlength="13"
+                        [textMask]="{mask:mask, guide: false}">               
+                    </label>
+                    <div
+                      *ngIf="telTemplate.hasError('minlength')"
+                      class="txt-negativo">Digite um telefone válido.
+                    </div>
+                    <div
+                      *ngIf="telTemplate.touched && telTemplate.hasError('required')"
+                      class="txt-negativo">Campo obrigatório.
+                    </div>
+                  </div>
+                  
+                  <div class="form-group form-btn">
+                    <button
+                      [disabled]="newContact.invalid"
+                      (click)="postForm(newContact.value); newContact.resetForm()">Enviar formulário</button>
+                  </div>
+                </form>
+              </div>
     
-  </div> -->
-
-  <section class="box-full">
-    <div class=" txt-center">
-      <h2>Porque fazer esse curso?</h2>
-      <p>A programação é um dos pilares da Internet e é fundamental para quem deseja atuar em uma
-        das áreas mais fascinantes e bem remuneradas do mercado digital. Pensando nisso, a smartcoder 
-        criou o ((nome do curso)), um programa que vai ensinar você a programar na prática,
-        sem complicações. Aprenda do zero e, ao final do curso, você vai saber criar um site de
-        verdade e de qualidade!</p>
-
-      <h3>A quem se destina</h3>
-      <p>O (((nome do curso))) é voltado para você que não tem nenhum conhecimento em programação e
-          não sabe por onde começar. Designers, redatores e outros profissionais do marketing digital
-          estão convidados a ampliar seus conhecimentos, aumentando o currículo para novas e
-          melhores oportunidades no mercado.</p>
-
-      <h3>O que e como vou aprender?</h3>
-      <p>Queremos que você aprenda sem rodeios e termine o curso sabendo programar o suficiente
-        para criar seu site. Aqui, você terá aulas práticas e diretas em um curso de Xx duração.
-        Preparamos um programa específico e completo para você ganhar conhecimento de forma
-        rápida e eficiente!</p>
-
-        <p>O mercado de trabalho muda constantemente, as empresas estão exigindo cada vez mais conhecimento
-           de seus funcionários, sabemos que desenvolver um site, ou um sistema web é um tanto complexo, aqui na 
-           'smartcoder' podemos te ajudar a entender esse mundo do frontend.</p>
-
-          <p>Aqui na 'smartcoder' temos treinamentos que vão desde quem não sabe o que é HTML, até desenvolvermos uma SPA - Single page application</p>
-          <p>Além de aprender diversas ferramentas para construir um website moderno, e utilizando as melhores técnicas e boas práticas, vamos aprender também como controlar as versões do nosso projeto, o onde armazenar os arquivos.</p>
-    </div>
-  </section>
-
-  <!-- form -->
-  <div id="contactForm" class="box-full bg-header bg-header-tools">
-    <div class="success" [hidden]="success">
-      <h2>Mensagem enviada com suceso!</h2>
-    </div>
-    <div class="loading" [hidden]="loading"></div>
-      
-    <div class="content txt-center">
-      <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
-      
-      <form action="" #newContact="ngForm">
-        <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
-          <label class="" for="">
-            <span>Nome</span>
-            <input 
-              type="text"
-              id="name"
-              name="name"
-              #nameTemplate="ngModel"
-              [ngModel]="name"
-              placeholder="Digite seu nome"
-              required
-              minlength="3"
-              autocomplete="off">
-              <div
-              *ngIf="nameTemplate.hasError('minlength')"
-              class="txt-negativo">O nome não pode ter menos que 3 letras.
             </div>
-          </label>
-        </div>
-        <div class="form-group form-email" [class.has-error]="!emailTemplate.valid && emailTemplate.touched">
-          <label for="" class="">
-            <span>E-mail</span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              #emailTemplate="ngModel"
-              [ngModel]="email"
-              placeholder="Digite seu e-mail"
-              required
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-              autocomplete="off">
-              <div
-                *ngIf="emailTemplate.touched &&  emailTemplate.hasError('pattern')"
-                class="txt-negativo">Digite um e-mail válido.
-              </div>
-          </label>
-        </div>
-        <div class="form-group form-tel" [class.has-error]="!telTemplate.valid && telTemplate.touched">
-          <label for="" class="">
-            <span>Telefone</span>
-            <input 
-              type="text"
-              id="tel"
-              name="tel"
-              #telTemplate="ngModel"
-              [ngModel]="tel"
-              placeholder="Digite seu telefone"
-              required
-              autocomplete="off"
-              minlength="13"
-              [textMask]="{mask:mask, guide: false}">               
-          </label>
-          <div
-            *ngIf="telTemplate.hasError('minlength')"
-            class="txt-negativo">Digite um telefone válido.
-          </div>
-          <div
-            *ngIf="telTemplate.touched && telTemplate.hasError('required')"
-            class="txt-negativo">Campo obrigatório.
-          </div>
-        </div>
-        <div class="form-group form-btn">
-          <button
-            [disabled]="newContact.invalid"
-            (click)="postForm(newContact.value); newContact.resetForm()">Enviar formulário</button>
-        </div>
-      </form>
-    </div>
-
-  </div>
-
-  <!-- mapa -->
-  <section class="">
-      
-    <div class="content txt-center" style="padding: 3em 0 0 0">
-      <h2>Localização</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1087225019446!2d-46.656998185022196!3d-23.564538384681327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c898859441%3A0xf1f2bc61d1b530da!2sAlameda+Santos%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1510794436858" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-
-  </section>
-  
-  <div class="box-full bg-header bg-header-tools">
-    <div class="content txt-center">
-      <h2 class="title-tools">Ferramentas que aprenderá no curso</h2>
-
-      <ul class="list-tools">
-        <li><div><img src="assets/images/logo-html5.png" alt="HTML5" title="HTML5"></div></li>
-        <li><div><img src="assets/images/logo-css3.png" alt="CSS3" title="CSS3"></div></li>
-        <li><div><img src="assets/images/logo-javascript.png" alt="JAVASCRIPT" title="JAVASCRIPT"></div></li>
-        <li><div><img src="assets/images/logo-npm.png" alt="NPM" title="NPM"></div></li>
-        <li><div><img src="assets/images/logo-bootstrap.png" alt="BOOTSTRAP" title="BOOTSTRAP"></div></li>
-        <li><div><img src="assets/images/logo-git.png" alt="GIT" title="GIT"></div></li>
-        <li><div><img src="assets/images/logo-github.png" alt="GITHUB" title="GITHUB"></div></li>
-        <li><div><img src="assets/images/logo-gulp.png" alt="GULP" title="GULP"></div></li>
-      </ul>
-          
-    </div>
-  </div>
-
-  <div class="box-full">
-    <div class="content txt-center" style="display: inherit">
-      <h2>Conteúdo programático</h2>
-      <p>O treinamento tem a duração de 80 horas com um conteúdo super completo, que vai desde a percepção do projeto até a codificação em si. Utilizaremos algumas ferramentas para facilitar nosso trabalho para nos ajudar a organizar o projeto.</p>
-      <p>Nosso papel como desenvolverdor é entregar a melhor expericneia para nosso usuario, nosso trenamento aborda muito isso, pois sem nosso usuario, nosso site nao faz sentido de estar publicado.</p>
-      <p>Aprenderemos tecnicas de UX - User experience para aplicar em nossos exercicios e projetos. Veremos tambem diversas ferramentas para nos auxiliar nesse trabalho.</p>
-
-      <h3 class="topics">Veja abaixo os tópicos que abordaremos durante o treinamento:</h3>
-      <ul class="list">
-        <li><p>HTML</p></li>
-        <li><p>Introdução HTML</p></li>
-        <li><p>O que é HTML5</p></li>
-        <li><p>Porque aprender HTML5</p></li>
-        <li><p>Conhecendo os navegadores</p></li>
-        <li><p>Motores de renderização</p></li>
-        <li><p>Tags e atributos</p></li>
-        <li><p>Estruturas e padrões semânticos</p></li>
-        <li><p>Títulos</p></li>
-        <li><p>Parágrafos</p></li>
-        <li><p>Listas</p></li>
-        <li><p>Tabelas</p></li>
-        <li><p>Links</p></li>
-        <li><p>Âncoras</p></li>
-        <li><p>Imagens</p></li>
-        <li><p>Elementos de áudio</p></li>
-        <li><p>Elementos de vídeo</p></li>
-        <li><p>Microformatos</p></li>
-        <li><p>Formulários</p></li>
-        <li><p>SEO</p></li>
-        <li><p>Boas práticas</p></li>
-      </ul>
-
-      <ul class="list">
-        <li><p>CSS3</p></li>
-        <li><p>Introdução CSS/CSS3</p></li>
-        <li><p>História do CSS</p></li>
-        <li><p>Porque aprender CSS</p></li>
-        <li><p>Versões CSS</p></li>
-        <li><p>Estilos Inline</p></li>
-        <li><p>CSS incorporado no arquivo HTML</p></li>
-        <li><p>Incluindo um arquivo CSS externo</p></li>
-        <li><p>Importando um arquivo CSS</p></li>
-        <li><p>Prefixos Proprietários</p></li>
-        <li><p>Posicionamento e alinhamento</p></li>
-        <li><p>Flexible Box</p></li>
-        <li><p>Bordas e sombras</p></li>
-        <li><p>Seletores e heranças</p></li>
-        <li><p>Entendendo o DOM</p></li>
-        <li><p>Propriedade !important</p></li>
-        <li><p>Cores, Backgrounds</p></li>
-        <li><p>Trabalhando com Fontes</p></li>
-        <li><p>Transições e animações</p></li>
-        <li><p>Modularização</p></li>
-        <li><p>Boas práticas</p></li>
-      </ul>
-
-      <ul class="list">
-        <li><p>JAVASCRIPT</p></li>
-        <li><p>Introdução javascript</p></li>
-        <li><p>História do javascript</p></li>
-        <li><p>Versões javascript</p></li>
-        <li><p>Chrome dev tools</p></li>
-        <li><p>Javascript Inline</p></li>
-        <li><p>Javascript incorporado no arquivo HTML</p></li>
-        <li><p>Incluindo um arquivo Javascript externo</p></li>
-        <li><p>Javascript Vs Frameworks e libs</p></li>
-        <li><p>Variáveis</p></li>
-        <li><p>Operadores</p></li>
-        <li><p>funções</p></li>
-        <li><p>Objetos</p></li>
-        <li><p>Arrays</p></li>
-        <li><p>Ajax</p></li>
-        <li><p>LocalStorage</p></li>
-        <li><p>Estruturas condicionais</p></li>
-        <li><p>Eventos</p></li>
-        <li><p>Dom</p></li>
-        <li><p>Modularização</p></li>
-        <li><p>Boas práticas</p></li>
-      </ul>
-
-    </div>
-  </div>
-  
-  <!-- form -->
-  <div id="contactForm" class="box-full bg-header bg-header-tools">
-      <div class="success" [hidden]="success">
-        <h2>Mensagem enviada com suceso!</h2>
       </div>
-      <div class="loading" [hidden]="loading"></div>
+      <div class="footer">
+          <p>smartcoder 2017 - Endereço: Alameda Santos - Bela Vista - SP.</p>
+      </div>
+      
+      
         
-      <div class="content txt-center">
-        <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
-        
-        <form action="" #newContact2="ngForm">
-          <div class="form-group form-name" [class.has-error]="!nameTemplate2.valid && nameTemplate2.touched"> 
-            <label class="" for="">
-              <span>Nome</span>
-              <input 
-                type="text"
-                id="name2"
-                name="name2"
-                #nameTemplate2="ngModel"
-                [ngModel]="name2"
-                placeholder="Digite seu nome"
-                required
-                minlength="3"
-                autocomplete="off">
-                <div
-                *ngIf="nameTemplate2.hasError('minlength')"
-                class="txt-negativo">O nome não pode ter menos que 3 letras.
-              </div>
-            </label>
-          </div>
-          <div class="form-group form-email" [class.has-error]="!emailTemplate2.valid && emailTemplate2.touched">
-            <label for="" class="">
-              <span>E-mail</span>
-              <input
-                type="email"
-                id="email2"
-                name="email2"
-                #emailTemplate2="ngModel"
-                [ngModel]="email2"
-                placeholder="Digite seu e-mail"
-                required
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                autocomplete="off">
-                <div
-                  *ngIf="emailTemplate2.touched &&  emailTemplate2.hasError('pattern')"
-                  class="txt-negativo">Digite um e-mail válido.
-                </div>
-            </label>
-          </div>
-          <div class="form-group form-tel" [class.has-error]="!telTemplate2.valid && telTemplate2.touched">
-            <label for="" class="">
-              <span>Telefone</span>
-              <input 
-                type="text"
-                id="tel2"
-                name="tel2"
-                #telTemplate2="ngModel"
-                [ngModel]="tel2"
-                placeholder="Digite seu telefone"
-                required
-                autocomplete="off"
-                minlength="13"
-                [textMask]="{mask:mask, guide: false}">               
-            </label>
-            <div
-              *ngIf="telTemplate2.hasError('minlength')"
-              class="txt-negativo">Digite um telefone válido.
-            </div>
-            <div
-              *ngIf="telTemplate2.touched && telTemplate2.hasError('required')"
-              class="txt-negativo">Campo obrigatório.
-            </div>
-          </div>
-          <div class="form-group form-btn">
-            <button
-              [disabled]="newContact2.invalid"
-              (click)="postForm(newContact2.value); newContact2.resetForm()">Enviar formulário</button>
-          </div>
-        </form>
-      </div>
-  
-    </div>
 
-  <div class="box-full">
-    <div class="content txt-center">
-      <h2>Depoimentos</h2>
 
-      <ul class="list-tools list-testmonials">
-        <li>
-          <div>
-            <img src="assets/images/image-testmonial.png" alt="Testmonial" title="Testmonial">
-            <h3 class="title-testmonial">J. Smith</h3>
-            <p>Vestibultum fringilla,
-                diam nec eleifend ultricies, 
-                erat ipsum mollis lorem, 
-                non aliquet risus erat non ex. 
-                at rhoncus eros.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="assets/images/image-testmonial.png" alt="Testmonial" title="Testmonial">
-            <h3 class="title-testmonial">J. Smith</h3>
-            <p>Vestibultum fringilla,
-                diam nec eleifend ultricies, 
-                erat ipsum mollis lorem, 
-                non aliquet risus erat non ex. 
-                at rhoncus eros.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="assets/images/image-testmonial.png" alt="Testmonial" title="Testmonial">
-            <h3 class="title-testmonial">J. Smith</h3>
-            <p>Vestibultum fringilla,
-                diam nec eleifend ultricies, 
-                erat ipsum mollis lorem, 
-                non aliquet risus erat non ex. 
-                at rhoncus eros.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <img src="assets/images/image-testmonial.png" alt="Testmonial" title="Testmonial">
-            <h3 class="title-testmonial">J. Smith</h3>
-            <p>Vestibultum fringilla,
-                diam nec eleifend ultricies, 
-                erat ipsum mollis lorem, 
-                non aliquet risus erat non ex. 
-                at rhoncus eros.</p>
-          </div>
-        </li>
-      
-      </ul>
-          
+
     </div>
   </div>
 
-  <footer class="box-full bg-header bg-header-tools">
-      
-    <div class="content box-footer">
-
-      <div class="col-footer">
-          <h3>Contatos</h3>
-          <ul>
-            <li><p><a href="mailto:contato@smartcoder.io">contato@smartcoder.io</a></p></li>
-            <li><p><a href="tel:954829300">(11) 954829300</a></p></li>
-            <li><p>São Paulo - Brasil</p></li>
-          </ul>
-      </div>
-
-      <div class="col-footer">
-          <h3>Redes sociais</h3>
-          <ul>
-              <li><p><a href="https://www.facebook.com/smartcoderBR/" target="_blank">Facebook</a></p></li>
-              <li><p><a href="https://github.com/smartcoderBR" target="_blank">Github</a></p></li>
-            </ul>
-      </div>
-      
-      <div class="col-footer">
-          <h3>Sobre</h3>
-          <p>Sobre a smartcoder</p>
-      </div>
-
-      <div class="col-footer">
-          <h3>Endereço</h3>
-          <p>Alameda Santos, xxxx - Jardim Paulista</p>
-      </div>
-
-    </div>
-
-  </footer>
 
 </div>

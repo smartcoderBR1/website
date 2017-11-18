@@ -54,7 +54,8 @@ html, body {
 .txt-negativo {
 	color: red;
     font-size: 1.6em;
-    margin-top: 0.6em;
+	margin-top: 0.6em;
+	position: absolute;
     background: #fff;
     padding: .8em .6em;
 }
