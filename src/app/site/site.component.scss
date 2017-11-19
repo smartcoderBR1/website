@@ -34,20 +34,11 @@
     
 }
 
-
 #contactForm {
     margin: 2em 0;
+    margin: 2em 0;
+    position: relative;
 }
-
-
-
-
-
-
-
-
-
-
 
 .box-full {
     width: 100%;
@@ -229,8 +220,8 @@ video {
     position: absolute;
     left: 0;
     opacity: .8;
-    top: 0;
-    z-index: 34;
+    
+    z-index: 34 !important;
 }
 
 .success {
