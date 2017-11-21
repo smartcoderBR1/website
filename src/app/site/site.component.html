@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="box-full" style="position: absolute; width: 100%; background: #fff; z-index: 2;">
+  <div class="box-full" style="position: absolute; width: 100%; z-index: 2; top: 4em">
     <div class="content txt-center">
       <a href="#" title="smartcoder">
           <img class="logo" src="assets/images/logo.png" alt="smartcoder tecnologia" title="smartcoder tecnologia">
@@ -9,8 +9,7 @@
   </div>
 
   <div id="A1-main">
-      <div class="txt-center" style="position: relative;
-      top: 40%;">
+      <div class="txt-center">
           <h1>Aprenda <strong class="txt-bold">DE FATO</strong> a criar um site prático, de qualidade e responsivo!</h1>
           <button (click)="anchorForm()" class="call-to-action">Tenho interesse!</button>
       </div>
@@ -38,29 +37,22 @@
           melhores oportunidades no mercado.</p>
 
       <h3>O que e como vou aprender?</h3>
-      <p>Queremos que você aprenda sem rodeios e termine o curso sabendo programar o suficiente
-        para criar seu site. Aqui, você terá aulas práticas e diretas em um curso de Xx duração.
-        Preparamos um programa específico e completo para você ganhar conhecimento de forma
-        rápida e eficiente!</p>
-
-        <p>O mercado de trabalho muda constantemente, as empresas estão exigindo cada vez mais conhecimento
-           de seus funcionários, sabemos que desenvolver um site, ou um sistema web é um tanto complexo, aqui na 
-           'smartcoder' podemos te ajudar a entender esse mundo do frontend.</p>
-
-          <p>Aqui na 'smartcoder' temos treinamentos que vão desde quem não sabe o que é HTML, até desenvolvermos uma SPA - Single page application</p>
-          <p>Além de aprender diversas ferramentas para construir um website moderno, e utilizando as melhores técnicas e boas práticas, vamos aprender também como controlar as versões do nosso projeto, o onde armazenar os arquivos.</p>
+      <p>Queremos que você aprenda sem rodeios e termine o curso sabendo programar o suficiente para criar seu site. Aqui, você terá aulas práticas e diretas em um curso de Xx duração. Preparamos um programa específico e completo para você ganhar conhecimento de forma rápida e eficiente!</p>
+      <p>O mercado de trabalho muda constantemente e as empresas estão exigindo cada vez mais conhecimento de seus funcionários. Sabemos que desenvolver um site ou um sistema web é um tanto complexo, mas, aqui na 'smartcoder', podemos ajudar você a entender esse mundo do frontend.</p>
+      <p>Temos treinamentos que vão do básico, destinados para quem não sabe o que é HTML, até o mais avançado, onde desenvolveremos juntos uma SPA - Single Page Application.</p>
+      <p>Além de conhecer diversas ferramentas para construir um website moderno, utilizando as melhores técnicas e boas práticas, vamos aprender também como controlar as versões do nosso projeto e onde armazenar os arquivos.</p>
     </div>
   </section>
 
   <!-- form -->
   <div id="contactForm" class="box-full bg-header bg-header-tools">
     <div class="success" [hidden]="success">
-      <h2>Mensagem enviada com suceso!</h2>
+      <h2>Mensagem enviada com sucesso!</h2>
     </div>
     <div class="loading" [hidden]="loading"></div>
       
     <div class="content txt-center">
-      <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
+      <h2 class="title-tools">Não fique de fora, entre em contato! <br /> Próximas turmas em Dezembro/2017</h2>
       
       <form action="" #newContact="ngForm">
         <div class="form-group form-name" [class.has-error]="!nameTemplate.valid && nameTemplate.touched"> 
@@ -147,7 +139,7 @@
   
   <div class="box-full bg-header bg-header-tools">
     <div class="content txt-center">
-      <h2 class="title-tools">Ferramentas que aprenderá no curso</h2>
+      <h2 class="title-tools">Ferramentas você vai aprender</h2>
 
       <ul class="list-tools">
         <li><div><img src="assets/images/logo-html5.png" alt="HTML5" title="HTML5"></div></li>
@@ -166,11 +158,11 @@
   <div class="box-full">
     <div class="content txt-center" style="display: inherit">
       <h2>Conteúdo programático</h2>
-      <p>O treinamento tem a duração de 80 horas com um conteúdo super completo, que vai desde a percepção do projeto até a codificação em si. Utilizaremos algumas ferramentas para facilitar nosso trabalho para nos ajudar a organizar o projeto.</p>
-      <p>Nosso papel como desenvolverdor é entregar a melhor expericneia para nosso usuario, nosso trenamento aborda muito isso, pois sem nosso usuario, nosso site nao faz sentido de estar publicado.</p>
-      <p>Aprenderemos tecnicas de UX - User experience para aplicar em nossos exercicios e projetos. Veremos tambem diversas ferramentas para nos auxiliar nesse trabalho.</p>
+      <p>O treinamento tem duração de 80 horas, com um conteúdo super completo que vai desde a percepção do projeto até a codificação em si. Utilizaremos algumas ferramentas para facilitar nosso trabalho e ajudar a organizar o projeto.</p>
+      <p>O papel do desenvolvedor é entregar a melhor experiência para o usuário. Nosso trenamento é focado nessa "regra", pois, acreditamos que sem nosso usuário, não faz sentido ter um site publicado.</p>
+      <p>ocê aprenderá ainda técnicas de UX (User Experience) para aplicar em exercícios e projetos. Veremos também diversas ferramentas para nos auxiliar no dia a dia.</p>
 
-      <h3 class="topics">Veja abaixo os tópicos que abordaremos durante o treinamento:</h3>
+      <h3 class="topics">Veja abaixo os tópicos que serão abordados durante o treinamento:</h3>
       <ul class="list">
         <li><p>HTML</p></li>
         <li><p>Introdução HTML</p></li>
@@ -249,12 +241,12 @@
   <!-- form -->
   <div id="contactForm" class="box-full bg-header bg-header-tools">
       <div class="success" [hidden]="success">
-        <h2>Mensagem enviada com suceso!</h2>
+        <h2>Mensagem enviada com sucesso!</h2>
       </div>
       <div class="loading" [hidden]="loading"></div>
         
       <div class="content txt-center">
-        <h2 class="title-tools">Não fique de fora, entre em contato. <br /> Próximas turmas em Dezembro/2017</h2>
+        <h2 class="title-tools">Não fique de fora, entre em contato! <br /> Próximas turmas em Dezembro/2017</h2>
         
         <form action="" #newContact2="ngForm">
           <div class="form-group form-name" [class.has-error]="!nameTemplate2.valid && nameTemplate2.touched"> 
